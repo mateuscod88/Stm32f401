@@ -29,3 +29,14 @@ void EXTI0_IRQHandler()
 		//HAL_GPIO_WritePin(GPIOD,GPIO_PIN_12,GPIO_PIN_SET);
 		
 	}
+
+void usart_config()
+{
+	UART_InitTypeDef uart_init;
+	uart_init.BaudRate = 9600;
+	uart_init.WordLength = UART_WORDLENGTH_8B;
+	uart_init.StopBits = UART_STOPBITS_1;
+	uart_init.Parity = UART_PARITY_NONE;
+	uart_init.Mode = UART_MODE_TX_RX;
+	uart_init.OverSampling = UART_OVERSAMPLING_16; 
+}
